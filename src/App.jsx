@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Pricing from './components/Pricing';
+import Blog from './components/Blog';
+import Contact from './components/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-slate-900">
+      <Hero />
+      <Pricing />
+      <Blog />
+      <Contact />
+      <footer className="w-full bg-pink-50/50 py-10">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-sm text-slate-600">© {new Date().getFullYear()} PastelPay Inc.</p>
+            <div className="flex items-center gap-6 text-sm text-slate-600">
+              <a href="#pricing" className="hover:text-slate-900">Pricing</a>
+              <a href="#blog" className="hover:text-slate-900">Blog</a>
+              <a href="#contact" className="hover:text-slate-900">Contact</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
